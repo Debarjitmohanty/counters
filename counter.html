@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Counter</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+
+    
+    
+  }
+  #counter {
+    margin: auto;
+    padding: 20px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    width: 300px;
+
+    
+  
+  }
+  p {
+    font-size: 24px;
+  }
+  button {
+    margin: 0 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  .positive {
+    color: green;
+  }
+  .negative {
+    color: red;
+  }
+
+
+
+
+
+  #bulbimage{
+    height: 200px;
+    width: 200px;
+}
+.lightcontainer button{
+  margin-left: 20px;
+}
+</style>
+</head>
+<body>
+
+<div id="counter">
+  <h2>Counter</h2>
+
+  <p id="count">0</p>
+  <button onclick="decrease()">Decrease</button>
+  <button onclick="reset()">Reset</button>
+  <button onclick="increase()">Increase</button>
+</div>
+
+<script>
+  var countParagraph = document.getElementById('count');
+  var count = 0;
+
+  function increase() {
+    count++;
+    updateCount();
+  }
+
+  function decrease() {
+    count--;
+    updateCount();
+  }
+
+  function reset() {
+    count = 0;
+    updateCount();
+  }
+
+  function updateCount() {
+    countParagraph.textContent = count;
+    
+    countParagraph.classList.remove('positive');
+    countParagraph.classList.remove('negative');
+    
+    if (count > 0) {
+      countParagraph.classList.add('positive');
+    } else if (count < 0) {
+      countParagraph.classList.add('negative');
+    }
+  }
+</script>
+
+<!DOCTYPE html>
+<html>
+  <head> </head>
+  <div class="ligthcontainer">
+    <h1 id="heading">hello good night </h1>
+    <img id="bulbimage" src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-dynamic-webapps/bulb-go-off-img.png" alt="" />
+    <div class="buttons">
+        <button id="onbutton" onclick="button()"type="submit">ON</button>
+      <button class="on-switch" id="offswitch" onclick="buttonoff()">
+            Off
+         
+         </button>
+    </div>
+         
+  </div>
+  <script type="text/javascript" charset="utf-8">
+      function button(){
+    document.getElementById("heading").textContent="hello good morning";
+    document.getElementById("bulbimage").src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-dynamic-webapps/bulb-go-on-img.png";
+    
+    document.getElementById("onbutton").style.backgroundColor = "#00D517";
+    document.getElementById("offswitch").style.backgroundColor = "#f7f7f7";
+}
+function buttonoff(){
+    document.getElementById("bulbimage").src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-dynamic-webapps/bulb-go-off-img.png";
+    document.getElementById("heading").textContent="good night!";
+    document.getElementById("offswitch").style.backgroundColor = "#ff4a50";
+    document.getElementById("onbutton").style.backgroundColor = "#f7f7f7";
+}
+
+  </script>
+</html>
+
+
+</body>
+</html>
